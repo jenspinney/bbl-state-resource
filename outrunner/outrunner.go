@@ -20,6 +20,7 @@ func RunBBL(name string, stateDir stateDir, command string, flags map[string]int
 
 func RunInjected(r commandRunner, name string, stateDir stateDir, command string, flags map[string]interface{}) error {
 	args := []string{}
+	args = append(args, "--debug")
 	args = append(args, fmt.Sprintf("--name=%s", name))
 	args = append(args, fmt.Sprintf("--state-dir=%s", stateDir.Path()))
 	for key, value := range flags {
